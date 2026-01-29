@@ -1,3 +1,10 @@
+/*************************************************************
+- DTO is a POJO / Java Bean.
+- It carries data between DAO, Service, and UI layers.
+- No business logic, no JDBC code.
+- One DTO object represents one row in the database table.
+***************************************************************/
+
 public class AppointmentDTO {
 
     // Represents appointment id from database
