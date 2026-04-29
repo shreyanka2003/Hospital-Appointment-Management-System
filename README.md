@@ -94,7 +94,29 @@ CREATE TABLE appointments (
 
 ## GUI Preview
 
-*(Add screenshots here)*
+<p align="center">
+  <img src="images/mainui.png" width="500"/>
+</p>
+
+<p align="center">
+  <img src="images/addappoin.png" width="500"/>
+</p>
+
+<p align="center">
+  <img src="images/view_addedappoin.png" width="500"/>
+</p>
+
+<p align="center">
+  <img src="images/deleteappoin1.png" width="500"/>
+</p>
+
+<p align="center">
+  <img src="images/deleteappoin2.png" width="500"/>
+</p>
+
+<p align="center">
+  <img src="images/view_deletedappoin.png" width="500"/>
+</p>
 
 ---
 
