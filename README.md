@@ -1,57 +1,122 @@
-# Hospital Appointment Management System (JDBC)
+# Hospital Appointment Management System
 
-A console-based **Hospital Appointment Management System** developed using **Java**, **JDBC**, and **MySQL**.  
-This project follows a **layered architecture (DTO–DAO–Service–UI)** and supports complete **CRUD operations** for managing hospital appointments.
+A desktop-based **Hospital Appointment Management System** built using **Java Swing**, **JDBC**, and **MySQL**.
+The application provides a simple graphical interface to manage patient appointments efficiently while following a clean layered architecture.
 
 ---
 
 ## Features
 
-- Add new appointments
-- Fetch appointment details by ID
-- View all appointments
-- Update appointment information
-- Delete appointments
-- Business validations through service layer
+* Add new appointments through GUI
+* View all appointments in a table (JTable)
+* Delete appointments by ID
+* Fetch appointment details by ID *(backend ready)*
+* Update appointment information *(backend ready)*
+* Input validation through service layer
 
 ---
 
-## Technologies Used
+## Tech Stack
 
-- Java
-- JDBC
-- MySQL
-- SQL
-
----
-
-## Project Architecture
-
-This project follows a **layered architecture** to ensure separation of concerns and maintainability.
-
-- **DTO (Data Transfer Object)**  
-  Transfers data between layers
-
-- **DAO (Data Access Object)**  
-  Handles all database operations using JDBC
-
-- **Service Layer**  
-  Contains business rules and validations
-
-- **Main (UI Layer)**  
-  Menu-driven console interface for user interaction
+* Java (Swing)
+* JDBC
+* MySQL
+* SQL
 
 ---
 
-## Database Design
+## Project Structure
 
-### Table: `appointments`
+```
+Hospital-Appointment-System/
+│
+├── src/
+│   ├── dao/        → database interaction (JDBC)
+│   ├── dto/        → appointment data model
+│   ├── service/    → business logic & validation
+│   ├── ui/         → Swing GUI
+│   └── mysql-connector-j-9.x.x.jar
+│
+├── .gitignore
+└── README.md
+```
+
+---
+
+## Architecture Overview
+
+The project follows a layered architecture to ensure clean separation of responsibilities:
+
+* **DTO** – represents appointment data
+* **DAO** – handles database queries using JDBC
+* **Service** – applies validation and business rules
+* **UI** – interacts with users through a graphical interface
+
+---
+
+## Database Setup
 
 ```sql
+CREATE DATABASE rnsitdb;
+USE rnsitdb;
+
 CREATE TABLE appointments (
     id INT PRIMARY KEY AUTO_INCREMENT,
     patient_name VARCHAR(100),
     doctor_name VARCHAR(100),
-    appointment_date DATE,
-    appointment_time TIME
+    appointment_date VARCHAR(20),
+    appointment_time VARCHAR(20)
 );
+```
+
+---
+
+## Running the Project
+
+1. Ensure MySQL server is running
+2. Update database credentials in:
+
+   ```
+   dao/AppointmentDAOImpl.java
+   ```
+3. Compile the project:
+
+   ```bash
+   javac -d . -cp src/mysql-connector-j-9.x.x.jar src/*/*.java
+   ```
+4. Run the application:
+
+   ```bash
+   java -cp ".;src/mysql-connector-j-9.x.x.jar" ui.AppointmentUI
+   ```
+
+---
+
+## GUI Preview
+
+*(Add screenshots here)*
+
+---
+
+## Future Improvements
+
+* Complete update & search functionality in GUI
+* Add doctor availability management
+* Improve UI layout using layout managers
+* Add authentication system
+* Appointment scheduling with conflict handling
+
+---
+
+## What I Learned
+
+* Designing applications using layered architecture
+* Integrating Java Swing with MySQL via JDBC
+* Managing structured data using SQL
+* Building user interfaces for desktop applications
+
+---
+
+## Author
+
+Shreyanka Das
