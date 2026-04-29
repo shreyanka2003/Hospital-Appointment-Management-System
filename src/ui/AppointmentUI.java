@@ -1,5 +1,5 @@
 package ui;
-
+import dto.AppointmentDTO;
 import javax.swing.*;
 import service.AppointmentService;
 
